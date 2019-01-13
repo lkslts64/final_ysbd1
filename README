@@ -1,0 +1,56 @@
+AUTHORS:
+ΚΩΝΣΤΑΝΤΙΝΟΣ ΜΙΧΑΗΛΙΔΗΣ	(ΑΜ: 1115201500098)
+ΛΟΥΚΑΣ ΛΙΤΣΟΣ			(ΑΜ: 1115201500082)
+
+
+COMPILATION:
+
+instructor's main:	$ make findex
+our main:			$ make findex2
+
+RUN:
+
+instructor's main:	$ ./findex arg1 arg2
+our main:			$ ./findex2
+
+CHECK RESULTS: 
+
+(only for instructor's main):	$ cat results.txt
+
+SPECS:
+
+	- attrLength is exactly the length of the attrName string (both for 
+	  HT_info and SHT_info).
+	
+	- offset is member of HT_info (and SHT_info) and it stores the offset
+	  from start (of block zero) to first bucket.
+	
+					Block 0
+					-------------
+					|			|	
+					|			|	
+					|	info	|	offset = size of info at disk.
+					|			|	
+					|___________|
+					|bucket 0	|
+					|bucket 1	|
+					|bucket 2	|
+					|...		|
+					|bucket N	|
+					|(useless)	|
+					|...		|
+					|___________|
+				
+	
+	- maxRecords member in SecondaryBlock and Block is not used at all.
+	
+	- Universal Hash is used (inspired from Wikipedia).
+	
+	- in HashStatistics(), we define overflow_blocks as the blocks that
+	  have recordsCounter == MAX_RECORDS.
+	
+	- TEST MAIN: Our test_main creates two secondary indexes with keys
+	  surname and address and it behaves similar to the instructor's
+	  main (test_main.c).
+	 
+

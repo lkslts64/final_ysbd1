@@ -1,0 +1,22 @@
+@Checkpoint 1: Create Index
+Checkpoint Result 1: SUCCESS
+@Checkpoint 2: Open Index
+Checkpoint Result 2: SUCCESS
+@Checkpoint 3: Insert Records
+@Checkpoint 4: Get all entries (Expecting greater than zero return code)
+Checkpoint Result 4: SUCCESS
+@Checkpoint 5: Get all entries (Expecting -1 return code, records do not exist)
+Checkpoint Result 5: SUCCESS
+@Checkpoint 6: Delete some entries
+Checkpoint Result 6: SUCCESS
+@Checkpoint 7: Get all entries (5000 should not exist)
+5000 5000
+Checkpoint Result 7: SUCCESS
+@Checkpoint 8: Create Secondary/ Open Index
+Checkpoint Result 8 SUCCESS
+@Checkpoint 9: Insert Records Secondary
+Checkpoint Result 9: SUCCESS
+@Checkpoint 10: SHT Get all entries (All should exist except the deleted)
+Checkpoint Result 10: SUCCESS
+@Checkpoint 11
+Checkpoint Result 11: SUCCESS
